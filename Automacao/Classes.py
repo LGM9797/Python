@@ -7,7 +7,7 @@ class LimpadorNome:
             raise LookupError('Valor inválido')
 
     def ExtraiArgumentos(self):
-        underScore = self.valor.find('2020') + 4 #Achando o limite da string que quero remover
+        underScore = self.valor.find('2020') + len('2020') #Achando o limite da string que quero remover
         newName = self.path + '/' + self.valor[:underScore] #tirando o slice que preciso passar de volta
         return newName
 

@@ -2,11 +2,17 @@ from Classes import LimpadorNome
 import os
 
 path = '/Users/lucasmonteiro/Desktop/GP1/'
-oldName = os.listdir(path)[1]
+print(os.listdir(path))
 
-nome = LimpadorNome(oldName, path)
-newName = nome.ExtraiArgumentos()
+for arquivos in os.listdir(path):
+    if(arquivos != '.DS'):
+        oldName = arquivos
+        nome1 = (LimpadorNome(arquivos, path))
+        nome1 = nome1.ExtraiArgumentos()
+        oldName1 = path+oldName
+        os.rename(oldName1, nome1)
 
-oldName = path+oldName
 
-os.rename(oldName, newName) #Args os.rename(old,new)
+
+
+
